@@ -1,11 +1,12 @@
 mysql_slice
 =
 
-create selective slice of database and tables from mysql
+Create selective slice of database and tables from mysql
 
-select data to transfer from production to testing
-you can filter data going into tesging database by your own criteria
-so there are no real passwords or customer logins in development/testing environment
+Select data to transfer from production to testing.
+
+Filter data that goes into develeopment/testing database by your own criteria,
+so there are no real passwords or customer logins in dev/test environment
 
 -
 **i.e. you have this:**
@@ -34,3 +35,6 @@ INSERT IGNORE INTO `employees`.`employees` VALUES
 ("10001","1953-09-02","Georgi","Facello","M","1986-06-26");
 INSERT IGNORE INTO `employees`.`employees` VALUES
 ("10001","1953-09-02","Georgi","Facello","M","1986-06-26");
+
+
+see example.php for filtering sensitive data examples
