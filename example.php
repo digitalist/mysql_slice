@@ -17,7 +17,7 @@ include ('../local_db_login.php');
 
 //self joins test
 $exampleQuery="select * from employees.employees e1 left join employees.employees e2 on 1=1 limit 1";
-$exampleQuery="select * from information_schema.columns c1 left join information_schema.columns c2 on 1=1 limit 1";
+//$exampleQuery="select * from information_schema.columns c1 left join information_schema.columns c2 on 1=1 limit 1";
 
 
 
@@ -65,7 +65,7 @@ $databases=$dbAndTablesCreationDump['databases'];
 $tables=$dbAndTablesCreationDump['tables'];
 
 echo implode("\n", $databases)."\n";
-echo implode("\n", $tables)."\n";
+echo implode("\n", $tables).";\n";
 echo "\n";
 echo implode("\n", $dump);
 echo "\n";

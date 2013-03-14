@@ -129,8 +129,7 @@ function DatabasesAndTables($mysqli, $metadata){
             
             $row=$result->fetch_array(MYSQLI_NUM);
             $tableName=array_keys($row);
-            //var_dump($row);
-            //exit();
+
             $tables[$db][$table]=$row[1];
             
         }
