@@ -1,8 +1,9 @@
 mysql_slice
 =
 
-create selective slice of database and tables from mysql select
-useful for transferring data from production to testing
+create selective slice of database and tables from mysql
+
+select data to transfer from production to testing
 you can filter data going into tesging database by your own criteria
 so there are no real passwords or customer logins in development/testing environment
 
