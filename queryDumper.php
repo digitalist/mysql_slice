@@ -130,7 +130,7 @@ function DatabasesAndTables($mysqli, $metadata){
             $row=$result->fetch_array(MYSQLI_NUM);
             $tableName=array_keys($row);
 
-            $tables[$db][$table]=$row[1];
+            $tables[$db][$table]="USE TABLE `{$db}`;\n\n ".$row[1];
             
         }
         
