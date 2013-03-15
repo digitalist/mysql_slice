@@ -14,13 +14,13 @@ servers and manipulate them on local machine
 
 -
 **i.e. you have this:**
-
+```sql
 select * from employees.employees e1 left join employees.employees e2 on 1=1 limit 1;
-
+```
 
 **you got this:**
 
-
+```sql
 DROP DATABASE `employees`;
 
 CREATE DATABASE  `employees`;
@@ -40,7 +40,7 @@ INSERT IGNORE INTO `employees`.`employees` VALUES
 
 INSERT IGNORE INTO `employees`.`employees` VALUES
 ("10001","1953-09-02","Georgi","Facello","M","1986-06-26");
-
+```
 -
 
 see example.php for filtering sensitive data examples
