@@ -128,13 +128,15 @@ function DatabasesAndTables($mysqli, $metadata){
             $result=$mysqli->query("SHOW CREATE TABLE `{$db}`.`{$table}`;");
             
             $row=$result->fetch_array(MYSQLI_NUM);
+            var_dump($row);
             $tableName=array_keys($row);
 
             $tables[$db][$table]=$row[1];
             
         }
-        return array('databases'=>$databases, 'tables'=>$tables);
+        
     }
+    return array('databases'=>$databases, 'tables'=>$tables);
 }
 
 

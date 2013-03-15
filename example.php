@@ -17,6 +17,7 @@ include ('../local_db_login.php');
 
 //self joins test
 $exampleQuery="select * from employees.employees e1 left join employees.employees e2 on 1=1 limit 1";
+$exampleQuery="select *  from employees.employees e1 left join employees.salaries s on s.emp_no=e1.emp_no  group by last_name limit 5;";
 //$exampleQuery="select * from information_schema.columns c1 left join information_schema.columns c2 on 1=1 limit 1";
 
 
