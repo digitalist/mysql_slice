@@ -65,10 +65,10 @@ $dbAndTablesCreationDump=\QueryDumperDatabaseAndTables\dump($exampleMysqli,$exam
 $databases=$dbAndTablesCreationDump['databases'];
 $tables=$dbAndTablesCreationDump['tables'];
 
-echo implode("\n", $databases)."\n";
-echo implode("\n", $tables).";\n";
+echo implode(";\n\n", $databases)."\n";
+echo implode(";\n\n", $tables).";\n";
 echo "\n";
-echo implode("\n", $dump);
+echo implode("\n\n", $dump);
 echo "\n";
 
 
