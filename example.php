@@ -71,6 +71,8 @@ $tables=$dbAndTablesCreationDump['tables'];
 echo implode(";\n\n", $databases)."\n";
 echo implode(";\n\n", $tables).";\n";
 echo "\n";
+
+//consider using array_unique($dump) before imploding
 echo implode("\n\n", $dump);
 echo "\n";
 
