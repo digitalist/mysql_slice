@@ -1,7 +1,10 @@
 <?php
 include ('queryDumper.php');
-include ('../local_db_login.php');
-
+if (!$argv[1]){
+	include ('../local_db_login.php');
+}else{
+	include ($argv[1]);
+}	
 /* uses  mysqli::fetch_all(MYSQLI_NUM) 
  * array(
  * 0=>array(field1, field2), 
@@ -21,13 +24,16 @@ include ('../local_db_login.php');
 //$exampleQuery="select *  from employees.employees e1 left join employees.salaries s on s.emp_no=e1.emp_no  group by last_name limit 5;";
 //$exampleQuery="select * from employees.salaries q inner join del1.salaries d on q.emp_no=d.s;";
 
+
 $exampleQuery="select * from information_schema.columns c1 left join information_schema.columns c2 on 1=1 limit 1";
-
-
-
 $exampleMysqli = new mysqli($host, $user, $password, $database);
-$exampleResult=$exampleMysqli->query($exampleQuery);
+var_dump ($exampleMysqli->connect_error);
 
+if ($argv[2]){
+	$exampleQuery=file_get_contents($argv[2]);
+}
+$exampleResult=$exampleMysqli->query($exampleQuery);
+var_dump($exampleQuery);
 //example
 //if no mysqlnd (native driver installed)
 if (!method_exists('mysqli_result', 'fetch_all') ){
@@ -60,8 +66,8 @@ $dump=(\queryDumper\dump($exampleData, $exampleMeta, $forbiddenFields));
 
 
 
-$dropDatabase=true; //default false
-$dropTable=true; //default false
+//$dropDatabase=true; //default false
+//$dropTable=true; //default false
 
 $dbAndTablesCreationDump=\QueryDumperDatabaseAndTables\dump($exampleMysqli,$exampleMeta, $dropDatabase, $dropTable);
 

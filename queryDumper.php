@@ -69,7 +69,7 @@ function replaceLogin($input){
 function sanitizeComment($input){
     //$generator = new LoremIpsumGenerator;
     //return $generator->getContent(100, 'plain');
-    return "test comment\n\n ...ok\n\n";
+    return "test comment... ";
 }
 
 namespace QueryDumperDatabaseAndTables;
@@ -130,7 +130,7 @@ function DatabasesAndTables($mysqli, $metadata){
             $row=$result->fetch_array(MYSQLI_NUM);
             $tableName=array_keys($row);
 
-            $tables[$db][$table]="USE TABLE `{$db}`;\n\n ".$row[1];
+            $tables[$db][$table]="USE `{$db}`;\n\n ".$row[1];
             
         }
         
